@@ -6,9 +6,7 @@
   "scripts": {
     "babel-node": "babel-node --presets=@babel/preset-env",
     "dev": "nodemon --exec npm run babel-node src/index.js",
-    "build": "babel src -d dist && npm run copyviews && npm run copypublic",
-    "copyviews": "ncp ./src/views/ ./dist/views/",
-    "copypublic": "ncp ./src/public/ ./dist/public/",
+    "build": "babel src -d dist",
     "clean": "rimraf dist"
   },
   "repository": {
