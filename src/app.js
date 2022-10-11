@@ -4,7 +4,7 @@
  const app = express();
 
 //  settings
-app.set("port", 4000);
+app.set("port",  process.env.PORT);
 
 // middelwares
 app.use(morgan("dev"));
