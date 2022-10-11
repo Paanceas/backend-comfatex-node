@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "babel-node": "babel-node --presets=@babel/preset-env",
-    "dev": "nodemon --exec npm run babel-node src/index.js"
+    "dev": "nodemon --exec npm run babel-node src/index.js",
+    "build": "babel src -d dist && npm run copyviews && npm run copypublic",
+    "copyviews": "ncp ./src/views/ ./dist/views/",
+    "copypublic": "ncp ./src/public/ ./dist/public/",
+    "clean": "rimraf dist"
   },
   "repository": {
     "type": "git",
@@ -29,7 +33,8 @@
     "@babel/node": "^7.19.1",
     "@babel/preset-env": "^7.19.4",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.20"
+    "ncp": "^2.0.0",
+    "nodemon": "^2.0.20",
+    "rimraf": "^3.0.2"
   }
 }
- 
