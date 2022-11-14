@@ -1,10 +1,10 @@
 import { response } from "../common/response";
-import { getConnection } from "./../database/database";
+import { getConnection } from "../database/database";
 
-const getTallas = async(_, res) => {
+const getConexion = async(_, res) => {
     try {
         const connection = await getConnection();
-        const result = await connection.query("CALL siegvadbd.getTallas();");
+        const result = await connection.query("CALL siegvadbd.getBaseDatos();");
         res.json(response(200, "Consulta tallas", result[0]));
         res.status(200)
     } catch (error) {
@@ -14,5 +14,5 @@ const getTallas = async(_, res) => {
 }
 
 export const methods = {
-    getTallas
+    getConexion
 }

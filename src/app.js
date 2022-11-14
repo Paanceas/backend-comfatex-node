@@ -15,8 +15,8 @@ app.use(bodyParser.json())
 app.use(morgan("dev"));
 
 // Routes
-import tallasRouters from "./routers/tallas.routes";
-app.use("/api/tallas", tallasRouters);
+import connectionRouters from "./routers/connection.routes";
+app.use("/api/conexion", connectionRouters);
 
 // Routes
 import clienteRouters from "./routers/cliente.routes";
