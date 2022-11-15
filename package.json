@@ -6,7 +6,8 @@
   "scripts": {
     "babel-node": "babel-node --presets=@babel/preset-env",
     "dev": "nodemon --exec npm run babel-node src/index.js",
-    "build": "babel src -d dist",
+    "build": "npm run clean && npm run prod",
+    "prod": "babel src -d dist",
     "clean": "rimraf dist"
   },
   "repository": {
